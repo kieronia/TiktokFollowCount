@@ -1,4 +1,4 @@
-﻿import argparse
+import argparse
 import json
 import os
 import random
@@ -54,8 +54,8 @@ while True:
 	os.system(f"title {face} // {username} // {str(followint)}")
 	
 
-#second time to work out dif over 5 seconds
-	r = requests.get(f'http://tiktok.com/@{username}', headers={'User-Agent':random.choice(user_agents)}) #i coulda done this better but my projects literally get posted in discords where people remove every refrence to me and pretend they made it etc and make massive servers off projects they found online and don't even give a star - like its free - cmon. Once any post gets 10+ stars I'll make it look super fancy as I know yall are interested etc
+#second time to work out difference over a few seconds - as there are annoying ratelimits
+	r = requests.get(f'http://tiktok.com/@{username}', headers={'User-Agent':random.choice(user_agents)}) #i coulda done this better but my projects literally get posted in discords where people remove every refrence to me and pretend they made it etc and make massive servers off projects they found online and don't even give a star - like its free - cmon. Once any post gets 10+ stars I'll make it look super fancy as I'll know yall are interested...
 	soup = BeautifulSoup(r.text, "html.parser")
 	content = soup.find_all("script", attrs={"type":"application/json", "crossorigin":"anonymous"})
 	content = json.loads(content[0].contents[0])
